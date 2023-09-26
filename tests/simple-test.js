@@ -6,5 +6,5 @@ export const options = {
 };
 
 export default () => {
-    http.get('http://localhost:5157/age/1987-09-01');
+    http.get(`http://${__ENV.HOSTNAME}/age/1987-09-01`);
 };

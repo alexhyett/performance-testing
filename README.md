@@ -9,7 +9,12 @@ dotnet run
 
 Then in a seperate terminal window run the tests using the commands below.
 
-I have added a HOSTNAME variable to each of the scripts (except simple-test.js) which needs to be added when running them.
+I have added a HOSTNAME variable to each of the scripts which needs to be added when running them.
+
+## Simple Test
+```sh
+k6 run -e HOSTNAME=localhost:5157 tests/simple-test.js
+```
 
 ## Stress Test
 ```sh
