@@ -19,7 +19,7 @@ Then in a seperate terminal window run the tests using the commands below.
 Note if you want to run these scripts against an API hosted on another machine you can use the HOSTNAME environment variable. e.g.
 
 ```sh
-k6 run -e HOSTNAME=192.168.1.1:5157 tests/simple-test.js
+k6 run -e HOSTNAME=192.168.1.1:5157 tests/stress-test.js
 ```
 
 ## Simple Test

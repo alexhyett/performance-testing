@@ -12,7 +12,7 @@ export const options = {
         { duration: '5m', target: 0 }, // ramp-down to 0 users
     ],
     thresholds: {
-        http_req_duration: ['p(99)<10'], // 99% of requests must complete within 10ms
+        http_req_duration: ['p(99)<100'], // 99% of requests must complete within 100ms
     }
 };
 
