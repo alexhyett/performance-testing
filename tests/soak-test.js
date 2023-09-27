@@ -1,5 +1,5 @@
 import http from 'k6/http';
-import { sleep } from 'k6';
+import { sleep, check } from 'k6';
 import { SharedArray } from 'k6/data';
 
 var hostname = __ENV.HOSTNAME;
@@ -30,6 +30,7 @@ const dates = new SharedArray('dates', function () {
 
 export default () => {
     const randomDate = dates[Math.floor(Math.random() * dates.length)];
-    http.get(`http://${hostname}/age/${randomDate}`);
+    const res = http.get(`http://${hostname}/age/${randomDate}`);
+    check(res, { '200': (r) => r.status === 200 });
     sleep(1);
 };
