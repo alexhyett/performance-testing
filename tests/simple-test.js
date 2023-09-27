@@ -1,7 +1,6 @@
 import http from 'k6/http';
 
 var hostname = __ENV.HOSTNAME;
-
 if (hostname == null) hostname = 'localhost:5157';
 
 export const options = {
