@@ -2,6 +2,8 @@ import http from 'k6/http';
 import { sleep } from 'k6';
 import { SharedArray } from 'k6/data';
 
+if (hostname == null) hostname = 'localhost:5157';
+
 export const options = {
     stages: [
         { duration: '5m', target: 200 }, // ramp up
@@ -30,6 +32,6 @@ const dates = new SharedArray('dates', function () {
 
 export default () => {
     const randomDate = dates[Math.floor(Math.random() * dates.length)];
-    http.get(`http://${__ENV.HOSTNAME}/age/${randomDate}`);
+    http.get(`http://${hostname}/age/${randomDate}`);
     sleep(1);
 };
